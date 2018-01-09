@@ -1,0 +1,98 @@
+body{
+	background-color: grey;
+	background-image: url("background.jpg");
+	  min-height: 500px; 
+	  margin: 0px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#wrapper{
+	background-color: white;
+	width: 1000px;
+	height: 1200px;
+    margin-left: 10em;
+	
+	
+}
+#nav {
+	background-color: #3B3B6D; opacity: 0.7; filter: alpha(opacity=70);
+	position: fixed;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#nav ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+	
+}
+#nav li{
+	float: left;
+	margin: 0;
+    padding: 0;
+  }
+#nav li a{
+	 display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+}
+#nav ul li a:hover{
+	 
+	 background-color: #555;
+}
+#img{
+	width: 1000px;
+	height: 500px;
+	
+		background-image: url("srch.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		text-align: center
+}
+input[type=text] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 6px solid white;
+    border-radius: 4px;
+    font-size: 16px;
+	background-size: 30px 30px;
+    background-color: transparent;
+    background-image: url('searchicon.png');
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+input::-webkit-input-placeholder {
+color: white !important;
+font: bold;
+}
+#textdiv{
+	width: 940px;
+	height: 200px;
+	padding:30px;
+	background:	#DBE9F4;
+	
+}
+img[src="tomato.png"]
+{
+	
+	float: left;
+	padding: 10px;
+	background-size: 100px 100px;
+	background-position: 5px 5px;
+} 
+#youtube {
+text-align: center;
+
+}	
+

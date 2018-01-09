@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+ 
+   $(window).scroll(function(){
+    $("#search").css("opacity", 1 - $(window).scrollTop() / 250);
+  });
+  $(window).scroll(function(){
+    $("#fde").css("opacity", 2 - $(window).scrollTop() /310);
+  });
+ 
+ 
+  </script>
+  
+<style>
+body{
+	background-color: grey;
+	background-image: url("background.jpg");
+	  min-height: 500px; 
+	  margin: 0px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper{
+position: absolute;
+width: 500px auto;
+height: 1200px auto;
+margin: 0;
+overflow: auto;
+
+}
+.grid-container {
+margin: auto;
+  display: grid;
+  position: relative;
+ 
+   grid-template-columns: repeat(4, 1fr);
+    
+  
+  grid-gap: 0px;
+  width: 80% ;
+height: 100% ;
+  padding: 0px;
+  overflow:auto;
+}
+.grid-container > div {
+}
+#img{
+ position: relative;
+grid-column-start: 1;
+  grid-column-end: 5;
+  overflow-x:auto;
+overflow-y:auto;
+	  
+	
+		text-align: center
+		}
+		input[type=text] {
+		 position: relative;
+    width: 70%;
+    box-sizing: border-box;
+    border: 6px solid white;
+    border-radius: 4px;
+    font-size: 16px;
+	background-size: 30px 30px;
+    background-color: transparent;
+    background-image: url('searchicon.png');
+    background-position: 5px 5px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+	
+}
+#te{
+position: absolute;
+ width: 70%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#textdiv{
+grid-column-start: 1;
+  grid-column-end: 5;
+position: relative;
+	width: 90% auto;
+	height: 200px auto;
+	padding:30px;
+	background:	#DBE9F4;
+	overflow:auto;
+}
+#nav {
+display: block;
+z-index:1;
+	background-color: #3B3B6D; opacity: 0.7; filter: alpha(opacity=70);
+	position: fixed;
+	height: 100% auto;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+img[src="tomato.png"]
+{
+	
+	float: left;
+	padding: 10px;
+	background-size: 100px 100px;
+	background-position: 5px 5px;
+}
+#nav ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+	
+}
+#nav li{
+	float: left;
+	margin: 0;
+    padding: 0;
+  }
+#nav li a{
+	 display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+	margin:0;
+}
+#nav ul li a:hover{
+	 
+	 background-color: #555;
+	 }
+#tmto{
+	 color: white;
+	 font-size:140px;
+	 font-style: italic;	
+	 }
+ 
+#youtube {
+	 position: relative;
+text-align: center;
+margin:auto;
+overflow: auto;
+
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: normal 16px sans-serif;
+
+	padding: 45px 50px;
+	
+}
+
+.footer-distributed .footer-left p{
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer links */
+
+.footer-distributed p.footer-links{
+	font-size:18px;
+	font-weight: bold;
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed p.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+#cssmenu {
+  background: #f96e5b;
+  width: auto;
+  position: fixed;
+  display: block;
+  width: 100%;
+  z-index:1;
+}
+#cssmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+#cssmenu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#cssmenu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#cssmenu.align-right ul li {
+  float: right;
+}
+#cssmenu.align-center ul {
+  text-align: center;
+}
+#cssmenu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#cssmenu ul li a:hover {
+  color: #333333;
+}
+#cssmenu ul li a:hover:before {
+  width: 100%;
+}
+#cssmenu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#cssmenu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #333333;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#cssmenu ul li.last > a:after,
+#cssmenu ul li:last-child > a:after {
+  display: none;
+}
+#cssmenu ul li.active a {
+  color: #333333;
+}
+#cssmenu ul li.active a:before {
+  width: 100%;
+}
+#cssmenu.align-right li.last > a:after,
+#cssmenu.align-right li:last-child > a:after {
+  display: block;
+}
+#cssmenu.align-right li:first-child a:after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #cssmenu ul li {
+    float: none;
+    display: block;
+  }
+  #cssmenu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #fb998c;
+  }
+  #cssmenu ul li.last > a,
+  #cssmenu ul li:last-child > a {
+    border: 0;
+  }
+  #cssmenu ul li a:after {
+    display: none;
+  }
+  #cssmenu ul li a:before {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="cssmenu">
+		<ul>
+   <li class='active'><a href='#'><span>Home</span></a></li>
+   <li><a href='#textdiv'><span>Products</span></a></li>
+   <li><a href='#'><span>Company</span></a></li>
+   <li class='last'><a href='#'><span>Contact</span></a></li>
+</ul>
+		</div>
+		<br>
+		
+		
+
+<div class="wrapper">
+
+<div class="grid-container">
+
+  <div id="img"><br>
+  <img src="srch.jpg" height="500px" width="100% auto" style="position: relative">
+	<div id="te">
+	
+		
+		<form id="search">
+		
+			<input type="text" id="fname" name="fname" placeholder="   Search..">
+		</form></div>
+	</div>
+	
+  
+
+<div id="textdiv">
+		
+		<p id="fde"> <img src="tomato.png" height="142" width="142"> 
+		The word "tomato" comes from the Spanish tomate, which in turn comes from the Nahuatl word tomatl [ˈtomat͡ɬ].
+
+The native Mexican tomatillo is tomate (in Nahuatl: tomātl About this sound pronunciation 
+(help·info), meaning "fat water" or "fat thing"). When Aztecs started to cultivate the Andean
+ fruit, bigger and red, they called the new species xitomatl (or jitomates) (pronounced 
+ [ʃiːˈtomatɬ]), ("plump thing with navel" or "fat water with navel"). 
+ After their conquest of Tenochtitlan, Spaniards exported tomatoes (jitomates) to the rest of 
+ the world with the name tomate, so numerous languages use forms of the word "tomato" (tomate) 
+ to refer to the red tomato instead of the green tomatillo. It first appeared in print in 1595. 
+ The scientific species epithet lycopersicum means "wolf peach", and comes from German werewolf
+ myths. These legends said that deadly nightshade was used by witches and sorcerers in potions to
+ transform themselves into werewolves, so the tomato's similar, but much larger, fruit was called
+ the "wolf peach" when it arrived in Europe.
+		</p>
+		<div id="youtube">
+		<video width="70%" height="70%" controls>
+		<source src="html.mkv" type="video/mp4">
+		<source src="html.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+		</video>
+	
+	</div>
+	</div>
+	
+	</div>
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">categories</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+
+				<p>Company Name &copy; 2015</p>
+			</div>
+
+		</footer>	
+	</div>
+</div>
+</body>
+</html>

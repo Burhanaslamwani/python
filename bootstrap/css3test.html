@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="footer-distributed.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+//alert("Hello world");
+$(window).scroll(function(){
+
+
+  if($(this).scrollTop()>450)
+{
+//  $("#textdiv").css("opacity", 1 - $(window).scrollTop() / 250);
+  $('#fde').fadeOut(1000);
+  
+  }
+  else
+  {
+  $('#fde').fadeIn(1000); 
+  }
+  });
+  $(window).scroll(function(){
+
+
+  if($(this).scrollTop()>700)
+{
+//  $("#textdiv").css("opacity", 1 - $(window).scrollTop() / 250);
+  $('#youtube').fadeOut(1000);
+  
+  }
+  else
+  {
+  $('#youtube').fadeIn(1000); 
+  }
+  });
+   $(window).scroll(function(){
+
+
+  if($(this).scrollTop()>150)
+{
+//  $("#textdiv").css("opacity", 1 - $(window).scrollTop() / 250);
+  $('#search').fadeOut(1000);
+  
+  }
+  else
+  {
+  $('#search').fadeIn(1000); 
+  }
+  });
+ 
+ 
+  </script>
+</head>
+<body>
+<div id="nav">
+		<ul>
+			<li><a href="google.com">Home</a></li>
+			<li><a href="google.com">Blog</a></li>
+			<li><a href="google.com">Contact us</a></li>
+		</ul>
+		</div>
+	<div id="wrapper">
+		<div id="img">
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br><br>
+		
+		<br>
+		<br>
+		<br>
+		<form id="search">
+			<input type="text" id="fname" name="fname" placeholder="   Search..">
+		</form>
+		</div>
+		<div id="textdiv">
+		
+		<p id="fde"> <img src="tomato.png" height="142" width="142"> 
+		The word "tomato" comes from the Spanish tomate, which in turn comes from the Nahuatl word tomatl [ˈtomat͡ɬ].
+
+The native Mexican tomatillo is tomate (in Nahuatl: tomātl About this sound pronunciation 
+(help·info), meaning "fat water" or "fat thing"). When Aztecs started to cultivate the Andean
+ fruit, bigger and red, they called the new species xitomatl (or jitomates) (pronounced 
+ [ʃiːˈtomatɬ]), ("plump thing with navel" or "fat water with navel"). 
+ After their conquest of Tenochtitlan, Spaniards exported tomatoes (jitomates) to the rest of 
+ the world with the name tomate, so numerous languages use forms of the word "tomato" (tomate) 
+ to refer to the red tomato instead of the green tomatillo. It first appeared in print in 1595. 
+ The scientific species epithet lycopersicum means "wolf peach", and comes from German werewolf
+ myths. These legends said that deadly nightshade was used by witches and sorcerers in potions to
+ transform themselves into werewolves, so the tomato's similar, but much larger, fruit was called
+ the "wolf peach" when it arrived in Europe.
+		</p>
+	</div>
+	<div id="youtube">
+		<video width="600" height="400" controls>
+		<source src="html.mkv" type="video/mp4">
+		<source src="html.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+		</video>
+	
+	</div>
+	</div>
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">categories</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+
+				<p>Company Name &copy; 2015</p>
+			</div>
+
+		</footer>	
+	
+		
+</body>
