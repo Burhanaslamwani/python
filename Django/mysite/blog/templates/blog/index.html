@@ -7,19 +7,246 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<style>
+body {
+    background: #f2f2f2;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+}
+
+
+.news {
+    background: #fff;
+	position: relative;
+	overflow: hidden;
+  display: inline-grid;
+	z-index:1;
+
+ 	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+
+	border: 1px solid #eaeaea;
+}
+
+.news .img-figure {
+	position: relative;
+}
+
+.news .img-figure img {
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.news:hover .img-figure img {
+	-webkit-transform: scale(1.10);
+	-moz-transform: scale(1.10);
+	-ms-transform: scale(1.10);
+	-o-transform: scale(1.10);
+	transform: scale(1.10);
+}
+
+.news .title {
+	/*padding: 29px 30px;*/
+	padding: 45px 30px;
+	position: absolute;
+	left: 0;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.news .title h1 {
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 19px;
+/*	color: #3D6AA2;*/
+	text-align: center;
+}
+
+.news:hover .title  {
+	margin-top: -90px;
+	background: #fff;
+}
+
+.news  p.description {
+	position: relative;
+	font-weight: normal;
+	line-height: 22px;
+	opacity: 0;
+
+	text-align: center;
+
+	padding: 15px 30px 0px 30px;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.news:hover p.description  {
+	opacity: 1;
+}
+
+p.more {
+	text-align: center;
+}
+
+.more a {
+    position: relative;
+    font-size: 13px;
+    margin-top: 30px;
+    display: block;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: inline-block;
+    color: #28998b;
+}
+
+.more a:after {
+    content: '';
+    width: 18px;
+    height: 1px;
+
+    position: absolute;
+    left: 55px;
+    top: 9px;
+
+    background: #28998b;
+
+    vertical-align: middle;
+    margin-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.news:hover a:after {
+    width: 30px;
+}
+
+.cat {
+	background: #a0bc9f;
+	color: #fff;
+	text-transform: uppercase;
+	position: absolute;
+	left: 0;
+	top: 20px;
+	z-index: 1;
+	padding: 3px 15px;
+}
+#con{
+padding-top: 80px;
+
+}
+
+
+
+
+
+</style>
 </head>
 <body>
+<!--
 {% if latest_heading_list %}
-    <ul>
+
     {% for heading in latest_heading_list %}
-    <li><a href="{% url 'blog:detail' heading.id %}">{{ heading.heading_text }}</a></li>
+    <div class='container'><a href="{% url 'blog:detail' heading.id %}">{{ heading.heading_text }}</a></div>
 
     {% endfor %}
-    </ul>
+
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
-<div class="container">
+-->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">Blog App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Auto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container" id="con">
+	<div class="row">
+{% if latest_heading_list %}
+
+    {% for heading in latest_heading_list %}
+
+
+		    <div class="col-sm-4">
+				<div class="news">
+					<div class="img-figure">
+						<div class="cat">fashion</div>
+						<img src="http://136.243.1.253/~creolitic/bootsnipp/auto.jpg" class="img-responsive">
+					</div>
+
+					<div class="title">
+						<h1><a href="{% url 'blog:detail' heading.id %}">{{ heading.heading_text }}</a></h1>
+					</div>
+					<p class="description">
+						If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden...
+					</p>
+
+					<p class="more">
+						<a href="{% url 'blog:detail' heading.id %}">read more</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+					</p>
+			</div>
+
+
+			</div>
+
+{% endfor %}
+
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
+</div>
+</div>
+
+
+
+
+<div class="container" style='padding-top:50px'>
+  <p class="text-center"> Write your own article here!!</p>
 <form action="{% url 'blog:index'%}" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="form-group">

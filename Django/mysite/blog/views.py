@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Heading, Body
+from .models import Heading, Body, User
 from django.urls import reverse
 from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
@@ -9,7 +9,7 @@ from django.utils import timezone
 
 
 def index(request):
-    latest_heading_list = Heading.objects.order_by('-pub_date')[:5]
+    latest_heading_list = Heading.objects.order_by('-pub_date')[:10]
     template = loader.get_template('blog/index.html')
     st = request.POST
     #print(st['bd'])
@@ -39,13 +39,22 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def detail(request, heading.id):
+def detail(request, heading_id):
     #try:
-        heading = Heading.objects.get(heading.id)
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        heading = Heading.objects.get(pk=heading_id)
 
         #body = Body.objects.get(pk=heading_id)
     #xcept Heading.DoesNotExist:
         #raise Http404("Question does not exist")
-        return render(request, 'blog/detail.html', {'heading': heading,'body':body})
-
+        return render(request, 'blog/detail.html', {'heading': heading})
+def ajx(request):
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+        User.objects.create(
+          email = email,
+          password = password
+        )
+    return render(request,'blog/ajx.html')
 # Create your views here.

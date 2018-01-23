@@ -5,6 +5,7 @@ class Heading(models.Model):
     heading_text = models.CharField(max_length=500)
     pub_date = models.DateTimeField('date published')
     body_text = models.CharField(max_length=5000, default=0)
+
     def __str__(self):
         return self.heading_text
     def was_published_recently(self):
@@ -17,3 +18,6 @@ class Body(models.Model):
         return self.body_text
     #votes = models.IntegerField(default=0)
 # Create your models here.
+class User(models.Model):
+    email = models.EmailField()
+    password = models.CharField(max_length=128)
