@@ -20,16 +20,34 @@
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="password" placeholder="Password">
     </div>
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
+    <button type="submit" onclick="signup" id="submit" name='sign' class="btn btn-primary">Submit</button>
+
+  </form>
+  <form id="newuser2">{% csrf_token %}
+
+  <h3> Login here</h4>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="email2" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="password2" placeholder="Password">
+  </div>
+
+  <button type="submit" onclick="login()" id="submit2" name='login' class="btn btn-primary">Submit</button>
+</form>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script type="text/javascript">
 
-   $(document).on('submit','#newuser',function(e){
+   function signup(){
+     $(document).on('submit','#newuser',function(e){
+     alert('user2')
           e.preventDefault();
 
           $.ajax({
@@ -38,9 +56,11 @@
             data:{
               email:$('#email').val(),
               password:$('#password').val(),
+
               csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
             },
-            success:function(){
+            success:function(data){
+              alert(data)
                   alert("saved")
             }
 
@@ -50,5 +70,31 @@
 
    });
 
+   }
+   function login(){
+     $(document).on('submit','#newuser2',function(e){
+       alert('user2')
+            e.preventDefault();
+
+            $.ajax({
+              type:'POST',
+              url:'/blog/ajx/',
+              data:{
+
+                email1:$('#email2').val(),
+                password1:$('#password2').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+              },
+              success:function(data){
+                alert(data)
+                    alert("saved")
+              }
+
+            });
+
+
+
+     });
+   }
 </script>
 </html>
