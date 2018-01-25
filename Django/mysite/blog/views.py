@@ -38,7 +38,10 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
+def flight(request):
+    #try:
 
+        return render(request, 'blog/flight.html')
 def detail(request, heading_id):
     #try:
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
@@ -67,19 +70,7 @@ def ajx(request):
 
         #try:
 
-        match = User.objects.filter(email=email)
-        if match:
-
-            #messages.info(request, 'Your password already exists!')
-            return HttpResponse("Email already exists")
-            #return render('ajx.html', message='Save complete')
-        else:
-            User.objects.create(
-            email = email,
-            password = password
-            )
-
-            return HttpResponse("new user created")
+        
 
      #except User.DoesNotExist:
             # Unable to find a user, this is fine
