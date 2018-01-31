@@ -8,8 +8,10 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <style>
+{% load static %}
 body {
-    background: #f2f2f2;
+  background-image: url('{% static 'blog/images/13.jpg' %}');
+
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -33,13 +35,19 @@ background-color: #EFDECD;
 	transition: all 0.5s ease;
 
 	border: 1px solid #eaeaea;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .news .img-figure {
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 	position: relative;
 }
 
 .news .img-figure img {
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 	position: relative;
 	overflow: hidden;
 	-webkit-transition: all 1s ease;
@@ -50,6 +58,7 @@ background-color: #EFDECD;
 }
 
 .news:hover .img-figure img {
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
 	-webkit-transform: scale(1.10);
 	-moz-transform: scale(1.10);
 	-ms-transform: scale(1.10);
@@ -70,6 +79,8 @@ background-color: #EFDECD;
 	-ms-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .news .title h1 {
@@ -79,11 +90,15 @@ background-color: #EFDECD;
 	font-size: 19px;
 /*	color: #3D6AA2;*/
 	text-align: center;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .news:hover .title  {
 	margin-top: -90px;
 	background: #fff;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .news  p.description {
@@ -101,14 +116,20 @@ background-color: #EFDECD;
 	-ms-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .news:hover p.description  {
 	opacity: 1;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 p.more {
 	text-align: center;
+  background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .more a {
@@ -123,6 +144,8 @@ p.more {
     transition: all 0.5s ease;
     display: inline-block;
     color: #28998b;
+    background-image: url('{% static 'blog/images/1.jpeg' %}');
+
 }
 
 .more a:after {
@@ -213,7 +236,7 @@ padding-top: 80px;
     {% for heading in latest_heading_list %}
 
 
-		    <div class="col-sm-4">
+		    <div class="col-md-4">
 				<div class="news">
 					<div class="img-figure">
 						<div class="cat">CAR'S</div>
@@ -248,7 +271,7 @@ padding-top: 80px;
 
 <div class="container" style='padding-top:50px'>
   <p class="text-center"> Write your own article here!!</p>
-<form action="{% url 'blog:index'%}" method="post" enctype="multipart/form-data">
+<form action="{% url 'blog:index' %}" method="post" enctype="multipart/form-data">
   {% csrf_token %}
   <div class="form-group">
     <label for="exampleFormControlInput1">Write article headline</label>
@@ -260,6 +283,7 @@ padding-top: 80px;
     <label for="exampleFormControlTextarea1">Article Body</label>
     <textarea class="form-control" name="bd" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
+  <input id="id_image" type="file" class="" name="image">
   <button type="submit" name='sub' class="btn btn-primary">Submit</button>
 </form>
 </div>

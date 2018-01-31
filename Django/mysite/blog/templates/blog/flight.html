@@ -1,109 +1,114 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
-<html>
-<head>
-<title>Book My Trip Flat Responsive Widget Template :: w3layouts</title>
 {% load static %}
+<!-- saved from url=(0078)http://demos.creative-tim.com/gaia-bootstrap-template-pro/examples/signin.html -->
+<html lang="en" class=" js no-touch"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
-<!-- custom-theme -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Book My Trip web template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //custom-theme -->
-<script type="text/javascript" src="{% static 'blog/js/jquery-1.11.1.min.js' %}"></script>
-<!-- stylesheet -->
-<link href="{% static 'blog/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-<link href="//fonts.googleapis.com/css?family=Asap:400,400i,500,500i,700,700i" rel="stylesheet">
-<!-- //stylesheet -->
-</head>
-<body class="bg agileinfo">
-   <h1 class="agile_head text-center">Book My Trip</h1>
-   <p class="text-center">Book Flights online</p>
-     <div class="container w3 text-center">
-		<form action="{% url 'blog:ajx' %}" method="post" class="agile_form">{% csrf_token %}
-		   <h2 class="w3layouts text-center">Offers a quick and easy way to book tickets online</h2>
-		   <ul class="agile_info_select">
-				 <li><input type="radio" name="view" id="excellent">
-				 	  <label for="excellent">One way</label>
-				      <div class="check w3"></div>
-				 </li>
-         <li><input type="radio" name="view" id="excellent">
-            <label for="excellent">Round trip</label>
-              <div class="check w3"></div>
-         </li>
-			</ul>
+    <link rel="apple-touch-icon" sizes="76x76" href="http://demos.creative-tim.com/gaia-bootstrap-template-pro/assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="http://demos.creative-tim.com/gaia-bootstrap-template-pro/assets/img/favicon.png">
 
-			<div class="clear"></div>
-			<input type="text" placeholder="Your Name" name="name" class="name agileits" required=""/>
-			<input placeholder="Date" class="date" id="datepicker" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
-			<div class="list_agileits_w3layouts">
-				<div class="section_class_agileits sec-left">
-				  <select>
-					<option value="0">Destination City</option>
-					<option value="1">city1</option>
-					<option value="2">city2</option>
-					<option value="3">city3</option>
-					<option value="4">city4</option>
-				  </select>
-				</div>
-				<div class="section_class_agileits sec-right">
-				  <select>
-					<option value="0">select class</option>
-					<option value="1">Any</option>
-					<option value="3">Economy Class</option>
-					<option value="2"> Business Class</option>
-					<option value="1">First Class</option>
-				  </select>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<div class="list_agileits_w3layouts">
-				<div class="section_class_agileits sec-left">
-				 <select>
-					<option value="0">Adults</option>
-					<option value="1">0</option>
-					<option value="2">1</option>
-					<option value="3"> 2</option>
-					<option value="4">3 or 3+</option>
-				 </select>
-				</div>
-				<div class="section_class_agileits sec-right">
-				  <select>
-					<option value="0">Children</option>
-					<option value="1">0</option>
-					<option value="2">1</option>
-					<option value="3"> 2</option>
-					<option value="4">3 or 3+</option>
-				 </select>
-				</div>
-				<div class="clear"></div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Signin | Gaia - Bootstrap Template</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link href="./Signin _ Gaia - Bootstrap Template_files/bootstrap.css" rel="stylesheet">
+    <link href="./Signin _ Gaia - Bootstrap Template_files/gaia.css" rel="stylesheet">
+
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://www.creative-tim.com/product/gaia-bootstrap-template-pro">
+
+    <!--     Fonts and icons     -->
+    <link href="./Signin _ Gaia - Bootstrap Template_files/css" rel="stylesheet" type="text/css">
+    <link href="./Signin _ Gaia - Bootstrap Template_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./Signin _ Gaia - Bootstrap Template_files/pe-icon-7-stroke.css" rel="stylesheet">
+
+        <link href="{% static 'blog/assets/css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/assets/css/gaia.css' %}" rel="stylesheet">
+        <!-- Canonical SEO -->
+        <link rel="canonical" href="https://www.creative-tim.com/product/gaia-bootstrap-template-pro">
+
+        <!--     Fonts and icons     -->
+
+        <link href="{% static 'blog/assets/css/css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'blog/assets/css/fonts/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'blog/assets/css/fonts/pe-icon-7-stroke.css' %}" rel="stylesheet">
+        <script type="text/javascript" charset="UTF-8" src="{% static 'blog/assets/js/common.js.download' %}"></script><script type="text/javascript" charset="UTF-8" src="{% static 'blog/assets/js/util.js.download' %}"></script><script type="text/javascript" charset="UTF-8" src="./Blog Post _ Gaia - Bootstrap Template_files/stats.js.download"></script></head>
+
+<script type="text/javascript" charset="UTF-8" src="{% static 'blog/assets/js/stats.js.download' %}"></script><script type="text/javascript" charset="UTF-8" src="./Signin _ Gaia - Bootstrap Template_files/AuthenticationService.Authenticate"></script></head>
+
+<body class="no-touch">
+
+    <div class="section section-signin">
+
+            <div class="image-container">
+                <div class="filter filter-color-black" style="height:800px; background-image: url(&quot;https://images.unsplash.com/photo-1480619110243-c94e677a8d2b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2f8cf5f565f87c486c2b8998bb0dd52c&auto=format&fit=crop&w=334&q=80;)">
+                    <div class="col-md-8">
+                        <div class="content">
+                            <div class="title-area">
+                                <h1 class="title-modern">Book Flights Cheap</h1>
+                                <h3>Economy and business</h3>
+                            </div>
+
+                            <h5 class="subtitle">Why this website?</h5>
+                            <p>The leading player in online flight bookings in India, MakeMyTrip offers great offers, some of the lowest airfares, exclusive discounts and a seamless online booking experience. Flight, hotel and holiday bookings through the desktop or mobile site is a delightfully customer friendly experience, and with just a few clicks you can complete your booking.
+                            </p>
+                            <h5 class="subtitle">Best rewards</h5>
+                            <p>With features like Instant Discounts, Fare Calendar, MyRewards Program, MyWallet and many more, the overall booking experience with MakeMyTrip constantly adds value to its product and continues to offer the best to its customers
+                            </p>
+                            <h5 class="subtitle">Leading website</h5>
+                            <p>Book your flights tickets with India’s leading flight booking company since the year 2000. While booking flights with MakeMyTrip, you can expect the ultimate online booking experience
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-			<div class="submit">
-			  <button type="submit" value="submit" onclick="window.location.href = '{% url 'blog:index' %}';">Submit</button>
-			</div>
-		</form>
-    <button class="btn btn-primary" onclick="window.location.href = '{% url 'blog:index' %}';">Button</button>
-	</div>
-	<div class="agileits_w3layouts_copyright text-center">
-			<p>© 2017 Book My Trip. All rights reserved</p>
-	</div>
-<!--start-date-piker-->
-		<link rel="stylesheet" href="{% static 'blog/css/jquery-ui.css' %}" />
-		<script src="{% static 'blog/js/jquery-ui.js' %}"></script>
-			<script>
+            <div class="form-container">
+                <div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 text-center">
 
-				$(function() {
-				$( "#datepicker,#datepicker1" ).datepicker();
-				});
-			</script>
-<!-- /End-date-piker -->
-</body>
-</html>
+                    <div class="title-area">
+                        <h2>Welcome</h2>
+                        <div class="separator separator-danger">✻</div>
+                    </div>
+
+                    <label><h4 class="text-gray">From</h4></label>
+                    <div class="form-group">
+                        <input type="text" name="email" value="" placeholder="Srinagar" class="form-control form-control-plain">
+                    </div>
+                    <label><h4 class="text-gray">To</h4></label>
+                    <div class="form-group">
+                        <input type="text" name="email" value="" placeholder="London" class="form-control form-control-plain">
+                    </div>
+                    <label><h4 class="text-gray">Date</h4></label>
+                    <div class="form-group">
+                         <input type="text" name="password" value="" placeholder="28/01/2018" class="form-control form-control-plain">
+                    </div>
+                    <label><h4 class="text-gray">No of Travellers</h4></label>
+                    <div class="form-group">
+                         <input type="text" name="password" value="" placeholder="0" class="form-control form-control-plain">
+                    </div>
+
+
+                    <div class="footer">
+					    <button class="btn btn-success btn-fill btn-wd" onclick="window.location.href = '{% url 'blog:flightrate' %}';">Search</button>
+
+
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+<!--   core js files    -->
+<script src="{% static 'blog/assets/js/jquery.min.js.download' %}" type="text/javascript"></script>
+<script src="{% static 'blog/assets/js/bootstrap.js.download' %}" type="text/javascript"></script>
+
+<!--  js library for devices recognition -->
+<script type="text/javascript" src="{% static 'blog/assets/js/modernizr.js.download' %}"></script>
+
+<!--  script for google maps   -->
+<script type="text/javascript" src="{% static 'blog/assets/js/js' %}"></script>
+
+<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
+<script type="text/javascript" src="{% static 'blog/assets/js/gaia.js.download' %}"></script>
+
+
+</body></html>

@@ -1,10 +1,16 @@
 from django.db import models
 import datetime
 from django.utils import timezone
+from django.core.files.storage import FileSystemStorage
+
+#fs = FileSystemStorage(location='C:/Users/burhan/Desktop/new log/Django/mysite/blog/static/blog/img/')
+
 class Heading(models.Model):
     heading_text = models.CharField(max_length=500)
     pub_date = models.DateTimeField('date published')
+
     body_text = models.CharField(max_length=5000, default=0)
+    model_pic = models.ImageField(upload_to='documents', default = 'blog/static/blog/assets/img/header-2.jpg')
 
     def __str__(self):
         return self.heading_text
