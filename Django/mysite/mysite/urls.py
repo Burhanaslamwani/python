@@ -22,6 +22,7 @@ urlpatterns = [
 path('blog/', include('blog.urls')),
 path('polls/', include('polls.urls')),
 path('posts/', include('posts.urls')),
+path('ClinicalTrialSearch/', include('ClinicalTrialSearch.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG is True:

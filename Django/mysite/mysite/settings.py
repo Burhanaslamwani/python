@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'blog',
     'posts',
+    'ClinicalTrialSearch',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
