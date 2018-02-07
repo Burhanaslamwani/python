@@ -3,7 +3,7 @@
 <html>
 {% load static %}
 <head>
-	<title>Clinical Study | Home </title>
+		<title>Clinical Study | Home </title>
 	<!--/tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -44,39 +44,10 @@
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
-						<!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
-					<!--<span class="sr-only">Toggle navigation</span>-->
-					<!--<span class="icon-bar"></span>-->
-					<!--<span class="icon-bar"></span>-->
-					<!--<span class="icon-bar"></span>-->
-				<!--</button>-->
 						<a class="navbar-brand"  href="#">
 							<h1><span class="fa fa-stethoscope" aria-hidden="true"></span> Search Trials </h1>
 						</a>
 					</div>
-					<!--/.navbar-header-->
-					<!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-						<!--&lt;!&ndash;<nav>&ndash;&gt;-->
-							<!--&lt;!&ndash;<ul class="nav navbar-nav">&ndash;&gt;-->
-								<!--&lt;!&ndash;<li><a href="{% url 'clinicalSearch:index' %}" class="active">Home</a></li>&ndash;&gt;-->
-								<!--&lt;!&ndash;<li><a href="{% url 'clinicalSearch:result' %}">Department</a></li>&ndash;&gt;-->
-								<!--&lt;!&ndash;<li><a href="gallery.html">Gallery</a></li>&ndash;&gt;-->
-								<!--&lt;!&ndash;<li class="dropdown">&ndash;&gt;-->
-									<!--&lt;!&ndash;<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>&ndash;&gt;-->
-									<!--&lt;!&ndash;<ul class="dropdown-menu">&ndash;&gt;-->
-										<!--&lt;!&ndash;<li><a href="codes.html">Codes</a></li>&ndash;&gt;-->
-										<!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
-										<!--&lt;!&ndash;<li><a href="icons.html">Icons</a></li>&ndash;&gt;-->
-										<!--&lt;!&ndash;<li class="divider"></li>&ndash;&gt;-->
-
-									<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-								<!--&lt;!&ndash;</li>&ndash;&gt;-->
-								<!--&lt;!&ndash;<li><a href="mail.html">Mail Us</a></li>&ndash;&gt;-->
-							<!--&lt;!&ndash;</ul>&ndash;&gt;-->
-						<!--&lt;!&ndash;</nav>&ndash;&gt;-->
-					<!--</div>-->
-					<!--/.navbar-collapse-->
-					<!--/.navbar-->
 				</div>
 			</nav>
 		</div>
@@ -95,8 +66,9 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h3>With a Touch of <span>Kindness.</span></h3>
-						<p>Child Care Treatments</p>
-						<h6>Our Medical Center is the preferred choice for diplomats and employees from 64 embassies, consulates and UN agencies, as well as private patients from over 60 countries.</h6>
+						<p> Denis Waitley</p>
+						<h6>"Time and health are two precious assets that we don't recognize and appreciate until they have been
+							depleted"</h6>
 					</div>
 				</div>
 			</div>
@@ -104,8 +76,9 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h3>With a Touch of <span>Kindness.</span></h3>
-						<p>Child Care Treatments</p>
-						<h6>Our Medical Center is the preferred choice for diplomats and employees from 64 embassies, consulates and UN agencies, as well as private patients from over 60 countries.</h6>
+						<p> Anne Wilson Schaef</p>
+						<h6>"Good health is not something we can buy.
+							However, it can be an extremely valuable savings account"</h6>
 					</div>
 				</div>
 			</div>
@@ -113,8 +86,8 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h3>With a Touch of <span>Kindness.</span></h3>
-						<p>Child Care Treatments</p>
-						<h6>Our Medical Center is the preferred choice for diplomats and employees from 64 embassies, consulates and UN agencies, as well as private patients from over 60 countries.</h6>
+						<p>Reba McEntire</p>
+						<h6>"All the money in the world can't buy you back good health"</h6>
 					</div>
 				</div>
 			</div>
@@ -122,8 +95,8 @@
 				<div class="container">
 					<div class="carousel-caption">
 						<h3>With a Touch of <span>Kindness.</span></h3>
-						<p>Child Care Treatments</p>
-						<h6>Our Medical Center is the preferred choice for diplomats and employees from 64 embassies, consulates and UN agencies, as well as private patients from over 60 countries.</h6>
+						<p> Robert Urich</p>
+						<h6>"A healthy outside starts from the inside"</h6>
 					</div>
 				</div>
 			</div>
@@ -164,8 +137,8 @@
 							<li class="resp-tab-item"><i class="fa fa-tags" aria-hidden="true"></i>Search by NCT-ID</li>
 							<!--<li class="resp-tab-item"><i class="fa fa-university" aria-hidden="true"></i>Hotels</li>-->
 							<!--<li class="resp-tab-item"><i class="fa fa-suitcase" aria-hidden="true"></i>Vacations</li>-->
-							<li class="resp-tab-item"><i class="fa fa-map-marker" aria-hidden="true"></i>Search by country</li>
-							<li class="resp-tab-item"><i class="fa fa-filter" aria-hidden="true"></i>Search by keywords</li>
+							<li class="resp-tab-item"><i class="fa fa-map-marker" aria-hidden="true"></i>Search by location</li>
+							<li class="resp-tab-item"><i class="fa fa-filter" aria-hidden="true"></i>Search by condition</li>
 						</ul>
 					</div>
 
@@ -173,7 +146,8 @@
 						<div class="resp-tabs-container">
 							<div class="tab-1 resp-tab-content">
 								<div class="w3l-sign-in">
-									<form action="#" method="post" class="agile_form">
+									<form action="{% url 'clinicalSearch:search_nct' %}" method="post" enctype="multipart/form-data">
+										{% csrf_token %}
 										<input type="text" placeholder="Enter NCT-ID" name="nct-id" class="name agileits" required=""/>
 
 										<div class="submit">
@@ -185,16 +159,12 @@
 
 							<div class="tab-1 resp-tab-content">
 								<div class="agileinfo-recover">
-								<form action="#" method="post" class="agile_form">
-										<input type="text" placeholder="Enter NCT-ID" name="nct-id" class="name agileits" required=""/>
-										<!--<input type="text" placeholder="Picking up" name="name" class="name agileits" required=""/>-->
-										<!--<input type="text" placeholder="Dropping off" name="name" class="name agileits" required=""/>-->
-										<!--<input placeholder="Pick-up date" class="date" id="datepicker5" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>-->
-										<!--<input placeholder="Drop-off date" class="date" id="datepicker6" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>-->
-
+								<form action="{% url 'clinicalSearch:search_location' %}" method="post" class="agile_form">
+										{% csrf_token %}
+										<!-- <input type="text" placeholder="Enter NCT-ID" name="nct-id" class="name agileits" required=""/> -->
 										<div class="list_agileits_w3layouts">
 											<div class="section_class_agileits sec-left">
-											 <select id="country">
+											 <select name="country" id="country">
 												 <option>--Select--</option>
 												 <option>India</option>
 												 <option>USA</option>
@@ -210,22 +180,9 @@
 							</div>
 							<div class="tab-1 resp-tab-content">
 								<div class="agile-send-mail">
-								<form action="#" method="post" class="agile_form">
-										<input type="text" placeholder="Enter Keywords or Mesh Terms" name="name" class="name agileits" required=""/>
-										<!--<input type="text" placeholder="Going to" name="name" class="name agileits" required=""/>-->
-										<!--<input placeholder="Select date" class="date" id="datepicker7" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>-->
-										<!--<div class="list_agileits_w3layouts">-->
-											<!--<div class="section_class_agileits sec-left">-->
-											 <!--<select>-->
-												<!--<option value="0">Guests</option>-->
-												<!--<option value="1">0</option>-->
-												<!--<option value="2">1</option>-->
-												<!--<option value="3"> 2</option>-->
-												<!--<option value="4">3 or 3+</option>-->
-											 <!--</select>-->
-											<!--</div>-->
-
-										<!--</div>-->
+									<form action="{% url 'clinicalSearch:search_condition' %}" method="get" enctype="multipart/form-data">
+												{% csrf_token %}
+										<input type="text" placeholder="Enter Condition or Mesh Terms" name="name" class="name agileits" required=""/>
 										<div class="submit">
 										  <input type="submit" value="search">
 										</div>
@@ -252,7 +209,7 @@
 <div class="services">
 <div class="container">
 		<h3 class="heading-agileinfo">Recent Trials<span>We offer extensive clinical trials to outbound and inbound patients.</span></h3>
-	
+
 		<div class="services-top-grids">
 			<div class="col-md-4">
 				<div class="grid1">
@@ -386,83 +343,28 @@
 		</div>
 	</div>
 </div>
-<!-- //Clients -->
-<!--/icons-->
-	<!--<div class="banner-bottom">-->
-		<!--<div class="container">-->
-			<!--<div class="tittle_head_w3layouts">-->
-				<!--<h3 class="heading-agileinfo">Case Studies<span>We offer extensive medical procedures to outbound and inbound patients.</span></h3>-->
-			<!--</div>-->
-			<!--<div class="inner_sec_info_agileits_w3">-->
-				<!--<div class="col-md-4 grid_info">-->
-					<!--<div class="icon_info">-->
-						<!--<img src="images/g4.jpg" alt=" " class="img-responsive">-->
-						<!--<h5>Nutrition Reference</h5>-->
-						<!--<p>Lorem ipsum dolor sit amet,vehicula vel sapien et, feugiat sapien amet.</p>-->
-						<!--<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">Read More</a>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!--<div class="col-md-4 grid_info">-->
-					<!--<div class="icon_info">-->
-						<!--<img src="images/g7.jpg" alt=" " class="img-responsive">-->
-						<!--<h5>Injury Prevention</h5>-->
-						<!--<p>Lorem ipsum dolor sit amet,vehicula vel sapien et, feugiat sapien amet.</p>-->
-						<!--<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">Read More</a>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!--<div class="col-md-4 grid_info">-->
-					<!--<div class="icon_info">-->
-						<!--<img src="images/g6.jpg" alt=" " class="img-responsive">-->
-						<!--<h5>Catheterization Lab</h5>-->
-						<!--<p>Lorem ipsum dolor sit amet,vehicula vel sapien et, feugiat sapien amet.</p>-->
-						<!--<a href="#" class="read-agileits" data-toggle="modal" data-target="#myModal">Read More</a>-->
-					<!--</div>-->
-				<!--</div>-->
-				<!--<div class="clearfix"> </div>-->
-			<!--</div>-->
-		<!--</div>-->
-	<!--</div>-->
-	<!--//icons-->
 
 	<!-- footer -->
 	<div class="footer_top_agile_w3ls">
 		<div class="container">
-			<div class="col-md-3 footer_grid">
+			<div class="col-md-4 footer_grid">
 				<h3>About Us</h3>
-				<p>Nam libero tempore cum vulputate id est id, pretium semper enim. Morbi viverra congue eros.
+				<p>We as a team are working to provide a platform where people all around the globe can search for clinical
+					trials.
 
 				</p>
-				
+
 			</div>
-			<div class="col-md-3 footer_grid">
-				<h3>Latest News</h3>
-				<ul class="footer_grid_list">
-					<li><i class="fa fa-angle-right" aria-hidden="true"></i>
-						<a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum neque vulputate </a>
-					</li>
-					<li><i class="fa fa-angle-right" aria-hidden="true"></i>
-						<a href="#" data-toggle="modal" data-target="#myModal">Dolor amet sed quam vitae</a>
-					</li>
-					<li><i class="fa fa-angle-right" aria-hidden="true"></i>
-						<a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum neque, vulputate </a>
-					</li>
-					<li><i class="fa fa-angle-right" aria-hidden="true"></i>
-						<a href="#" data-toggle="modal" data-target="#myModal">Dolor amet sed quam vitae</a>
-					</li>
-					<li><i class="fa fa-angle-right" aria-hidden="true"></i>
-						<a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum neque, vulputate </a>
-					</li>
-				</ul>
-			</div>
-			<div class="col-md-3 footer_grid">
+			<div class="col-md-4 footer_grid">
 				<h3>Contact Info</h3>
 				<ul class="address">
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i>8088 USA, Honey block, <span>New York City.</span></li>
-					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-					<li><i class="fa fa-phone" aria-hidden="true"></i>+09187 8088 9436</li>
+					<li><i class="fa fa-map-marker" aria-hidden="true"></i>315 Fifth Ave, 9th Floor <span>New York NY 10016</span></li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@appliedinformaticsinc.com">info@appliedinformaticsinc.com</a></li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+1 212 537 6944</li>
 				</ul>
 			</div>
-			<div class="col-md-3 footer_grid ">
+
+			<div class="col-md-4 footer_grid ">
 				<h3>Sign up for our Newsletter</h3>
 				<p>Get Started For Free</p>
 				<div class="footer_grid_right">
@@ -478,7 +380,7 @@
 		</div>
 	</div>
 	<div class="footer_wthree_agile">
-		<p>© 2018 New Clinic. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+		<p>© 2018 Search Trials. All rights reserved | Design by <a href="http://appliedinformaticsinc.com/">Applied Informatics</a></p>
 	</div>
 	<!-- //footer -->
 	<!-- bootstrap-modal-pop-up -->
@@ -487,18 +389,18 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					New Clinic
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 					<div class="modal-body">
 						<img src="{% static 'clinicalSearch/images/g7.jpg' %}" alt=" " class="img-responsive" />
 						<p>”TrialX gives them a single place to create a profile of their site and trials, receive legitimate leads, communicate directly with those prospects, and get performance reports on the resulting activity...”
-							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
 								esse quam nihil molestiae consequatur.</i></p>
 					</div>
 			</div>
 		</div>
 	</div>
-<!-- //bootstrap-modal-pop-up --> 
+<!-- //bootstrap-modal-pop-up -->
 
 	<!-- js -->
 	<script type="text/javascript" src="{% static 'clinicalSearch/js/jquery-2.1.4.min.js' %}"></script>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+	<title>Clinical Study | Results  </title>
+	<!--/tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Clinicl Search | Results" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--//tags -->
+	<link href="{% static 'clinicalSearch/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'clinicalSearch/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'clinicalSearch/css/appointment_style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'clinicalSearch/css/font-awesome.css' %}" rel="stylesheet">
+	<link href="{% static 'clinicalSearch/css/hipster_cards.css' %}" rel="stylesheet">
+	<link href="{% static 'clinicalSearch/css/pe-icon-7-stroke.css' %}" rel="stylesheet">
+
+	<!-- //for bootstrap working -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700" rel="stylesheet">
+	<style>
+	body{
+background-color: white;
+
+	}
+         .card{
+             margin-bottom: 70px;
+         }
+     </style>
+</head>
+
+<body>
+	<!-- header -->
+	<div class="header" id="home">
+		<div class="content white" style="margin-bottom:20px;">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand"  href="#">
+							<h1><span class="fa fa-stethoscope" aria-hidden="true"></span> Search Trials </h1>
+						</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!-- banner -->
+
+	<!-- {% if rec %}
+<div class="row">
+	{% for row in rec %}
+
+	<div class="card-box col-md-4 col-sm-6">
+							 <div class="card card-with-border" style="margin:5px; height:490px;" data-background="color" data-color="orange">
+
+											 <div class="icon">
+													 <i class="fa fa-user-md"></i>
+
+									 </div>
+									 <div class="content text-center">
+											 <h4 class="title title-modern">{{ row.nct_id }}</h4>
+											 <p class="description">{{ row.official_title }}</p>
+									 </div>
+									 <div class="footer text-center">
+											 <button class="btn btn-neutral btn-round btn-fill btn-modern">Status: {{row.overall_status}}</button>
+									 </div>
+							 </div>
+					 </div>
+
+					 {% endfor %}
+
+ </div>
+					 {% endif %}
+	</div>
+	</div> -->
+
+<div class="banner_inner_content_agile_w3l">
+
+</div>
+	<!--//banner -->
+	<!-- departments -->
+	 <div class="services">
+<div class="container">
+		<h3 class="heading-agileinfo">Search Results<span></span></h3>
+<div class="container">
+		{% if users %}
+
+
+ {% for row in users %}
+
+<div class="col-md-4">
+	 <div class="row">
+	<div class="grid1" style="margin:5px; height:350px; overflow:hidden;">
+		<i class="fa fa-user-md" aria-hidden="true"></i>
+		<h4><a href="{% url 'clinicalSearch:detail' row.nct_id %}">{{ row.nct_id }}</a></h4><h1></h1>
+
+
+
+
+		<ul>
+				<li>{{ row.official_title }}</li>
+
+		</ul>
+		<p>Status: {{row.overall_status}} </p>
+	</div>
+</div>
+</div>
+{% endfor %}
+
+
+{% endif %}
+
+</div>
+{% if users.has_other_pages %}
+  <ul class="pagination">
+    {% if users.has_previous %}
+      <li><a href="?page={{ users.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in users.paginator.page_range %}
+      {% if users.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if users.has_next %}
+      <li><a href="?page={{ users.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+</div>
+			<div class="clearfix"></div>
+		</div>
+
+
+	<!-- footer -->
+	<div class="footer_top_agile_w3ls">
+		<div class="container">
+			<div class="col-md-4 footer_grid">
+				<h3>About Us</h3>
+				<p>We as a team are working to provide a platform where people all around the globe can search for clinical
+					trials.
+
+				</p>
+
+			</div>
+			<div class="col-md-4 footer_grid">
+				<h3>Contact Info</h3>
+				<ul class="address">
+					<li><i class="fa fa-map-marker" aria-hidden="true"></i>315 Fifth Ave, 9th Floor <span>New York NY 10016</span></li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@appliedinformaticsinc.com">info@appliedinformaticsinc.com</a></li>
+					<li><i class="fa fa-phone" aria-hidden="true"></i>+1 212 537 6944</li>
+				</ul>
+			</div>
+
+			<div class="col-md-4 footer_grid ">
+				<h3>Sign up for our Newsletter</h3>
+				<p>Get Started For Free</p>
+				<div class="footer_grid_right">
+
+					<form action="#" method="post">
+						<input type="email" name="Email" placeholder="Email Address..." required="">
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+
+		</div>
+	</div>
+	<div class="footer_wthree_agile">
+		<p>© 2018 Search Trials. All rights reserved | Design by <a href="http://appliedinformaticsinc.com/">Applied Informatics</a></p>
+	</div>
+
+	<!-- //footer -->
+	<!-- bootstrap-modal-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					New Clinic
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				</div>
+					<div class="modal-body">
+						<img src="images/g7.jpg" alt=" " class="img-responsive" />
+						<p>Ut enim ad minima veniam, quis nostrum
+							exercitationem ullam corporis suscipit laboriosam,
+							nisi ut aliquid ex ea commodi consequatur? Quis autem
+							vel eum iure reprehenderit qui in ea voluptate velit
+							esse quam nihil molestiae consequatur, vel illum qui
+							dolorem eum fugiat quo voluptas nulla pariatur.
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+								esse quam nihil molestiae consequatur.</i></p>
+					</div>
+			</div>
+		</div>
+	</div>
+<!-- //bootstrap-modal-pop-up -->
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'clinicalSearch/js/jquery-2.1.4.min.js' %}"></script>
+	<script src="{% static 'clinicalSearch/js/hipster-cards.js' %}"></script>
+
+	<script>
+		$('ul.dropdown-menu li').hover(function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+		}, function () {
+			$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+		});
+	</script>
+	<script type="text/javascript" src="{% static 'clinicalSearch/js/bootstrap.js' %}"></script>
+</body>
+
+</html>
