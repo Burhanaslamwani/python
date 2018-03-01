@@ -8,11 +8,13 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from django.contrib import messages
 from django import forms
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.views import login, logout
+from django.contrib.auth.decorators import login_required
 class ImageUploadForm(forms.Form):
 
     image = forms.ImageField()
-
+@login_required(login_url="/blog/login/")
 def index(request):
     latest_heading_list = Heading.objects.order_by('-pub_date')[:2]
     template = loader.get_template('blog/index.html')
@@ -53,13 +55,13 @@ def flight(request):
 def flightrate(request):
     return render(request,'blog/flightrate.html')
 
-def login(request):
-    if request.method == "POST":
-        email = request.POST['email']
-        password = request.POST['password']
-        q = User(email=email, password=password)
-        q.save()
-    return render(request,'blog/index2.html')
+# def login(request):
+#     if request.method == "POST":
+#         email = request.POST['email']
+#         password = request.POST['password']
+#         q = User(email=email, password=password)
+#         q.save()
+#     return render(request,'blog/index2.html')
 
 def news(request):
     latest_heading_list = Heading.objects.order_by('-pub_date')[:10]
@@ -111,5 +113,21 @@ def ajx(request):
 
 
     return render(request,'blog/ajx.html')
+def login_view(request):
+    if request.method=='POST':
+        print("oooooooooooooooooo")
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            print("nnnnnnnnnnnnnnnnnnnnn")
+            return redirect('blog:news')
+    else:
+        form = AuthenticationForm()
+    return render('blog/index.html',{'form':form})
+
+def logout_view(request):
+    if request.method == "POST":
+        logout(request)
+    return HttpResponseRedirect(reverse('blog:news'))
+
 
 # Create your views here.

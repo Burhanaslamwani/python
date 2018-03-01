@@ -3,16 +3,16 @@
  =========================================================
  * Bootstrap Wizard - v1.1.1
  =========================================================
- 
+
  * Product Page: https://www.creative-tim.com/product/bootstrap-wizard
  * Copyright 2017 Creative Tim (http://www.creative-tim.com)
  * Licensed under MIT (https://github.com/creativetimofficial/bootstrap-wizard/blob/master/LICENSE.md)
- 
+
  =========================================================
- 
+
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
- 
+
 a {
   color: #2CA8FF;
 }
@@ -234,11 +234,12 @@ h1 .subtitle {
   width: 100%;
 }
 .wizard-card .tab-content {
-  min-height: 340px;
+  min-height: 240px;
   padding: 20px 10px;
 }
 .wizard-card .wizard-footer {
   padding: 0 10px;
+  margin-left: 49%;
 }
 .wizard-card .disabled {
   display: none;
@@ -403,6 +404,35 @@ h1 .subtitle {
   color: #444444;
   height: 38px;
   padding: 6px 16px;
+}
+
+.form-group + p >input[type="password"],input[type="text"]{
+  background-color: #FFFFFF !important;
+  border: 1px solid #E3E3E3 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  color: #444444 !important;
+  height: 38px !important;
+  padding: 6px 16px !important;
+
+
+}
+.form-group + p >input[type="text"],input[type="password"]{
+  background-color: #FFFFFF !important;
+  border: 1px solid #E3E3E3 !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  color: #444444 !important;
+  height: 38px !important;
+  padding: 6px 16px !important;
+
+
+}
+.form-group>input[type="text"]:focus {
+  background-color: #FFFFFF;
+  border: 1px solid #9A9A9A;
+  box-shadow: none;
+  outline: 0 none;
 }
 .form-control:focus {
   background-color: #FFFFFF;

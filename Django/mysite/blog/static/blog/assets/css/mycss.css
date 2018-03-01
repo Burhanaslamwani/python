@@ -1,0 +1,3 @@
+.form_div > input[type="password"]{
+  border:2px solid red !important;
+}

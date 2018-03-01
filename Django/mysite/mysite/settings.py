@@ -133,8 +133,9 @@ STATIC_ROOT = os.path.join(ENV_PATH, 'allstatic').replace("\\","/")
 MEDIA_ROOT = os.path.join(ENV_PATH, 'media').replace("\\","/")
 STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
-print(ENV_PATH)
-print(STATIC_URL)
-print(STATIC_ROOT)
-print(MEDIA_URL)
-print(MEDIA_ROOT)
+LOGIN_REDIRECT_URL = '/blog/'
+# print(ENV_PATH)
+# print(STATIC_URL)
+# print(STATIC_ROOT)
+# print(MEDIA_URL)
+# print(MEDIA_ROOT)
